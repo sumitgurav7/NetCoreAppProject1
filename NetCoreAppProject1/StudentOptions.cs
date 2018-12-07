@@ -5,28 +5,28 @@ namespace NetCoreAppProject1
 {
     public class StudentOptions
     {
-        private IDisplayAll displayAll;
-        private IDisplayOne displayOne;
+        private IDisplayAll _displayAll;
+        private IDisplayOne _displayOne;
 
         public StudentOptions(IDisplayAll displayAll, IDisplayOne displayOne)
         {
-            this.displayAll = displayAll;
-            this.displayOne = displayOne;
+            this._displayAll = displayAll;
+            this._displayOne = displayOne;
         }
 
         public List<Student> DisplayAllStudents()
         {
-            return displayAll.DisplayAllStudent();
+            return _displayAll.DisplayAllStudent();
         }
 
-        public Student DisplayStudentById( int ID)
+        public Student DisplayStudentById( int id)
         {
-            return displayOne.DisplaySTudentById(ID);
+            return _displayOne.DisplaySTudentById(id);
         }
 
         public int CountStudents()
         {
-            return displayAll.CountElements();
+            return _displayAll.CountElements();
         }
     }
 }

@@ -1,40 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace NetCoreAppProject1
+﻿namespace NetCoreAppProject1
 {
     public class Student
     {
-        private static Student studentInstance = null;
-        private static readonly object key = new object();
+        private static Student _studentInstance;
+        private static readonly object Key = new object();
         public int Id { get; set; }
-        public string name { get; set; }
+        public string Name { get; set; }
         public int Age { get; set; }
         public string Address { get; set; }
-        public string xmlInfo { get; set; }
+        public string XmlInfo { get; set; }
         internal static Student StudentInstance {
 
             get
             {
-                lock (key)
+                lock (Key)
                 {
-                    if (studentInstance == null)
-                    {
-                        studentInstance = new Student();
-                    }
-                    return studentInstance;
+                    return _studentInstance ?? (_studentInstance = new Student());
                 }
             }
         }
 
         public Student(int id,string name, int age, string address, string xmlInfo)
         {
-            this.Id = id;
-            this.name = name;
-            this.Age = age;
-            this.Address = address;
-            this.xmlInfo = xmlInfo;
+            Id = id;
+            Name = name;
+            Age = age;
+            Address = address;
+            XmlInfo = xmlInfo;
         }
 
         private Student() { }

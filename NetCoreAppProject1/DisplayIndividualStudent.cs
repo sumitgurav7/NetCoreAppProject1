@@ -6,24 +6,24 @@ using System.Text;
 
 namespace NetCoreAppProject1
 {
-    public class DisplayIndividualStudent : SQLConn, IDisplayOne
+    public class DisplayIndividualStudent : SqlConn, IDisplayOne
     {
 
 
-        private static DisplayIndividualStudent displayIndividualStudentInstance = null;
-        private static readonly object key = new object();
+        private static DisplayIndividualStudent _displayIndividualStudentInstance = null;
+        private static readonly object Key = new object();
 
         public static DisplayIndividualStudent DisplayIndividualStudentInstance
         {
             get
             {
-                lock (key)
+                lock (Key)
                 {
-                    if (displayIndividualStudentInstance == null)
+                    if (_displayIndividualStudentInstance == null)
                     {
-                        displayIndividualStudentInstance = new DisplayIndividualStudent();
+                        _displayIndividualStudentInstance = new DisplayIndividualStudent();
                     }
-                    return displayIndividualStudentInstance;
+                    return _displayIndividualStudentInstance;
                 }
             }
         }
@@ -32,7 +32,7 @@ namespace NetCoreAppProject1
 
         private DisplayIndividualStudent() { }
 
-        public Student DisplaySTudentById(int ID)
+        public Student DisplaySTudentById(int id)
         {
             Con.Open();
             Student student = null;
@@ -40,7 +40,7 @@ namespace NetCoreAppProject1
             SqlCommand command = new SqlCommand("select * from StudentInfo where Id = @ID", Con);
             SqlParameter parameter = new SqlParameter();
             parameter.ParameterName = "@ID";
-            parameter.Value = ID;
+            parameter.Value = id;
             command.Parameters.Add(parameter);
             reader = command.ExecuteReader();
             if (reader.HasRows)
@@ -50,10 +50,10 @@ namespace NetCoreAppProject1
                     //Console.WriteLine("Id : " + reader[0] + " Name : " + reader[1] + " Age: " + reader[2] + " Address: " + reader[3]);
                     student = Student.StudentInstance;
                     student.Id = (int)reader[0];
-                    student.name = reader[1].ToString();
+                    student.Name = reader[1].ToString();
                     student.Age = (int)reader[2];
                     student.Address = reader[3].ToString();
-                    student.xmlInfo = reader[4].ToString();
+                    student.XmlInfo = reader[4].ToString();
                 }
 
                 Con.Close();

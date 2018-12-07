@@ -11,7 +11,7 @@ namespace TestingFacade
 
             StudentDirectoryService studentDirectoryService = new StudentDirectoryService();
             studentDirectoryService.Choice = 2;
-            studentDirectoryService.startApp();
+            studentDirectoryService.StartApp();
         }
     }
 }

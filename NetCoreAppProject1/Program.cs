@@ -14,7 +14,7 @@ namespace NetCoreAppProject1
             Console.WriteLine("Hello World!");
             IStudentDirectoryServiceInterface students = new StudentDirectoryService();
             
-            students.startApp();
+            students.StartApp();
         }
     }
 }

@@ -9,15 +9,15 @@ namespace NetCoreAppProject1
 
     public class StudentDirectoryService : IStudentDirectoryServiceInterface
     {
-        private IDisplayAll displayAll = DisplayStudent.DisplayInstance;
-        private IDisplayOne displayOne = DisplayIndividualStudent.DisplayIndividualStudentInstance;
-        int choice;
+        private IDisplayAll _displayAll = DisplayStudent.DisplayInstance;
+        private IDisplayOne _displayOne = DisplayIndividualStudent.DisplayIndividualStudentInstance;
+        int _choice;
 
-        IDisplayAll DisplayAll { get => displayAll; set => displayAll = value; }
-        IDisplayOne DisplayOne { get => displayOne; set => displayOne = value; }
-        public int Choice { get => choice; set => choice = value; }
+        IDisplayAll DisplayAll { get => _displayAll; set => _displayAll = value; }
+        IDisplayOne DisplayOne { get => _displayOne; set => _displayOne = value; }
+        public int Choice { get => _choice; set => _choice = value; }
 
-        public void startApp()
+        public void StartApp()
         {
             
            StudentOptions displayStudent = new StudentOptions(DisplayAll, DisplayOne);
@@ -27,7 +27,7 @@ namespace NetCoreAppProject1
 
             do
             {
-                if (choice == 0)
+                if (_choice == 0)
                 {
                     Console.WriteLine("Welcome to student Directory");
                     Console.WriteLine("*************************************");
@@ -35,7 +35,7 @@ namespace NetCoreAppProject1
                         "Enter 2 for Retriving data by id \n" +
                         "Enter 3 for Updating Data ");
 
-                    if (int.TryParse(Console.ReadLine(), out choice))
+                    if (int.TryParse(Console.ReadLine(), out _choice))
                     {
                         Console.WriteLine("you have selected choice " + Choice);
                     }
@@ -50,7 +50,7 @@ namespace NetCoreAppProject1
                     case 1:
                         foreach(Student student in displayStudent.DisplayAllStudents())
                         {
-                            Console.WriteLine("Id : " + student.Id + " Name : " + student.name + " Age: " + student.Age + " Address: " + student.Address);
+                            Console.WriteLine("Id : " + student.Id + " Name : " + student.Name + " Age: " + student.Age + " Address: " + student.Address);
                         }
                         Choice = 0;
                         break;
@@ -58,11 +58,11 @@ namespace NetCoreAppProject1
                     case 2:
                         Console.WriteLine("Enter ID to Retrive Data");
                         Console.WriteLine();
-                        int ID;
-                        if (int.TryParse(Console.ReadLine(), out ID))
+                        int id;
+                        if (int.TryParse(Console.ReadLine(), out id))
                         {
-                            Student student=displayStudent.DisplayStudentById(ID);
-                            Console.WriteLine("Id : " + student.Id + " Name : " + student.name + " Age: " + student.Age + " Address: " + student.Address);
+                            Student student=displayStudent.DisplayStudentById(id);
+                            Console.WriteLine("Id : " + student.Id + " Name : " + student.Name + " Age: " + student.Age + " Address: " + student.Address);
 
                             Choice = 0;
                         }

@@ -33,7 +33,7 @@ namespace TestingLinq
             
             foreach(Student st in studentsWithAGe25)
             {
-                Console.WriteLine("name " + st.name + " Age: " + st.Age);
+                Console.WriteLine("name " + st.Name + " Age: " + st.Age);
             }
         }
     }

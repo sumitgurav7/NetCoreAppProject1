@@ -6,23 +6,23 @@ using NetCoreAppProject1.Interface;
 
 namespace NetCoreAppProject1
 {
-    public class DisplayStudent : SQLConn, IDisplayAll
+    public class DisplayStudent : SqlConn, IDisplayAll
     {
 
 
-        private static DisplayStudent displayInstance = null;
-        private static readonly object key = new object();
+        private static DisplayStudent _displayInstance = null;
+        private static readonly object Key = new object();
 
         public static DisplayStudent DisplayInstance {
             get
             {
-                lock (key)
+                lock (Key)
                 {
-                    if (displayInstance == null)
+                    if (_displayInstance == null)
                     {
-                        displayInstance = new DisplayStudent();
+                        _displayInstance = new DisplayStudent();
                     }
-                    return displayInstance;
+                    return _displayInstance;
                 }
             }
         }
