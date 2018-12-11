@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using NetCoreAppProject1.Interface;
+﻿using NetCoreAppProject1.Interface;
 
 namespace NetCoreAppProject1
 {

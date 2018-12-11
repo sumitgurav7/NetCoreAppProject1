@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace NetCoreAppProject1.Interface
+﻿namespace NetCoreAppProject1.Interface
 {
     public interface IDisplayOne
     {

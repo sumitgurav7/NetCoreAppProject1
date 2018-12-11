@@ -10,8 +10,8 @@ namespace NetCoreAppProject1
 
         public StudentOptions(IDisplayAll displayAll, IDisplayOne displayOne)
         {
-            this._displayAll = displayAll;
-            this._displayOne = displayOne;
+            _displayAll = displayAll;
+            _displayOne = displayOne;
         }
 
         public List<Student> DisplayAllStudents()

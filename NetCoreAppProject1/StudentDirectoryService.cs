@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using NetCoreAppProject1.Interface;
+﻿using NetCoreAppProject1.Interface;
+using System;
 
 namespace NetCoreAppProject1
 {
-   
+
 
     public class StudentDirectoryService : IStudentDirectoryServiceInterface
     {
@@ -13,8 +11,8 @@ namespace NetCoreAppProject1
         private IDisplayOne _displayOne = DisplayIndividualStudent.DisplayIndividualStudentInstance;
         int _choice;
 
-        IDisplayAll DisplayAll { get => _displayAll; set => _displayAll = value; }
-        IDisplayOne DisplayOne { get => _displayOne; set => _displayOne = value; }
+        IDisplayAll DisplayAll { get => _displayAll;}
+        IDisplayOne DisplayOne { get => _displayOne;}
         public int Choice { get => _choice; set => _choice = value; }
 
         public void StartApp()
@@ -32,7 +30,7 @@ namespace NetCoreAppProject1
                     Console.WriteLine("Welcome to student Directory");
                     Console.WriteLine("*************************************");
                     Console.WriteLine("Enter 1 for displaying data \n" +
-                        "Enter 2 for Retriving data by id \n" +
+                        "Enter 2 for Retrieving data by id \n" +
                         "Enter 3 for Updating Data ");
 
                     if (int.TryParse(Console.ReadLine(), out _choice))
@@ -56,7 +54,7 @@ namespace NetCoreAppProject1
                         break;
 
                     case 2:
-                        Console.WriteLine("Enter ID to Retrive Data");
+                        Console.WriteLine("Enter ID to Retrieve Data");
                         Console.WriteLine();
                         int id;
                         if (int.TryParse(Console.ReadLine(), out id))

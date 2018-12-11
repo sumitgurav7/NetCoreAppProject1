@@ -1,8 +1,6 @@
 ﻿using NetCoreAppProject1.Interface;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Text;
 
 namespace NetCoreAppProject1
 {
@@ -10,7 +8,7 @@ namespace NetCoreAppProject1
     {
 
 
-        private static DisplayIndividualStudent _displayIndividualStudentInstance = null;
+        private static DisplayIndividualStudent _displayIndividualStudentInstance;
         private static readonly object Key = new object();
 
         public static DisplayIndividualStudent DisplayIndividualStudentInstance
@@ -30,7 +28,7 @@ namespace NetCoreAppProject1
 
 
 
-        private DisplayIndividualStudent() { }
+//        private DisplayIndividualStudent() { }
 
         public Student DisplaySTudentById(int id)
         {
@@ -68,7 +66,7 @@ namespace NetCoreAppProject1
                 Con.Close();
                 command.Dispose();
                 reader.Close();
-                return student;
+                return null;
             }
 
             

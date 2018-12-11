@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using NetCoreAppProject1;
 using NetCoreAppProject1.Interface;
+using System.Collections.Generic;
 
 namespace TryingWeb.Controllers
 {
@@ -13,8 +9,22 @@ namespace TryingWeb.Controllers
     [ApiController]
     public class StudentRetriveController : ControllerBase
     {
-        private IDisplayAll displayAll = DisplayStudent.DisplayInstance;
-        private IDisplayOne displayOne = DisplayIndividualStudent.DisplayIndividualStudentInstance;
+
+        private IDisplayAll displayAll;
+            //(IDisplayAll) Activator.CreateInstance(Type.GetType(ConfigurationManager.AppSetting["DisplayAllInstance"],true));
+
+        private IDisplayOne displayOne;
+            //(IDisplayOne) Activator.CreateInstance(Type.GetType(ConfigurationManager.AppSetting["DisplayOneInstance"], true));
+
+        public StudentRetriveController(IDisplayAll displayAll, IDisplayOne displayOne)
+        {
+            this.displayAll = displayAll;
+            this.displayOne = displayOne;
+        }
+
+        
+
+
 
         [HttpGet]
         public List<Student> GetAllStudents()
@@ -26,7 +36,7 @@ namespace TryingWeb.Controllers
 
         [Route("student/byId/{id}")]
         [HttpGet]
-        public Student getStudentById(string id)
+        public Student GetStudentById(string id)
         {
             StudentOptions studentOptions = new StudentOptions(displayAll, displayOne);
             return studentOptions.DisplayStudentById(int.Parse(id));

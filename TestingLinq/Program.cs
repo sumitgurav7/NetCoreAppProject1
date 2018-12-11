@@ -10,16 +10,16 @@ namespace TestingLinq
     {
         private IDisplayAll displayAll = DisplayStudent.DisplayInstance;
         private IDisplayOne displayOne = DisplayIndividualStudent.DisplayIndividualStudentInstance;
-        static void Main(string[] args)
+        static void Main()
         {
             Program program = new Program();
-            program.getAllStudent();
+            program.GetAllStudent();
 
 
             Console.ReadKey();
         }
 
-        private void getAllStudent()
+        private void GetAllStudent()
         {
             StudentOptions studentOptions = new StudentOptions(displayAll, displayOne);
             List<Student> students = studentOptions.DisplayAllStudents();
