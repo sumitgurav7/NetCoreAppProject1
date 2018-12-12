@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="NetCoreAppProject1.DisplayIndividualStudent">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="NetCoreAppProject1.SqlConn" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.5" Y="2" />
+        <Point X="3.5" Y="1.812" />
+        <Point X="5.25" Y="1.812" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAQAAQAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DisplayIndividualStudent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="0.1" />
+  </Class>
+  <Class Name="NetCoreAppProject1.DisplayStudent">
+    <Position X="5.25" Y="3" Width="1.5" />
+    <InheritanceLine Type="NetCoreAppProject1.SqlConn" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.5" Y="3.555" />
+        <Point X="3.5" Y="3.688" />
+        <Point X="5.25" Y="3.688" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAIAAAAAAAAAgAAAAAgAA=</HashCode>
+      <FileName>DisplayStudent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="1.391" />
+  </Class>
+  <Class Name="NetCoreAppProject1.ExtendingIAllStudent">
+    <Position X="2.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>ExtendingIAllStudent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetCoreAppProject1.SqlConn">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SQLConn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetCoreAppProject1.Student">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAIAQAAEAAAAQAAAAAAAQCAAAAAAAAAAA=</HashCode>
+      <FileName>Student.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetCoreAppProject1.StudentOptions">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAACAAAAACAAAAAABgAA=</HashCode>
+      <FileName>StudentOptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="NetCoreAppProject1.Interface.IDisplayAll">
+    <Position X="2.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Interface\IDisplayAll.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="NetCoreAppProject1.Interface.IDisplayOne">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IDisplayOne.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
